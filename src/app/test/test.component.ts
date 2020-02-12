@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
+  title='This is test templete';
+  
+  public name = "Rifat";
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-}
+}   
