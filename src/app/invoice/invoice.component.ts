@@ -9,6 +9,7 @@ export class InvoiceComponent implements OnInit {
   constructor() {}
 
   public sms="";
+  public name=""
   public hasError = true;
   public successText = "text_success";
   public specialText = true;
@@ -27,5 +28,9 @@ export class InvoiceComponent implements OnInit {
     this.sms="hi btn click"
     console.log("hi here!!!!");
     console.log("all event",event);
+  }
+  mainFeild (value){
+    this.name=value;
+    console.log(value)
   }
 }
