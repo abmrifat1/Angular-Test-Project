@@ -9,7 +9,11 @@ export class InvoiceComponent implements OnInit {
 
   constructor() { }
 
+  public hasError=true;
+  public successText='text_success';
   ngOnInit(): void {
+
+
   }
 
 }
