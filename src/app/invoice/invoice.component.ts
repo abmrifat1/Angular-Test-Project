@@ -17,6 +17,12 @@ export class InvoiceComponent implements OnInit {
     "text_danger":this.hasError,
      "text_special":this.specialText,
   }
+
+  public multyStyle ={
+    color:'yellow',
+    fontStyle: 'italic',
+    
+  }
   ngOnInit(): void {
 
 
