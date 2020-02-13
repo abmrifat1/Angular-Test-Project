@@ -11,6 +11,12 @@ export class InvoiceComponent implements OnInit {
 
   public hasError=true;
   public successText='text_success';
+  public specialText= true;
+  public messageClass= {
+    "text_success":!this.hasError,
+    "text_danger":this.hasError,
+     "text_special":this.specialText,
+  }
   ngOnInit(): void {
 
 
