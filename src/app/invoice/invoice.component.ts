@@ -13,6 +13,7 @@ export class InvoiceComponent implements OnInit {
   public hasError = true;
   public displayCondition=false;
   public switchColor='blue';
+  public fruits=['mango','apple','banana','orange']
   public successText = "text_success";
   public specialText = true;
   public messageClass = {

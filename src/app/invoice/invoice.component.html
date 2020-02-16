@@ -59,3 +59,9 @@ Hi,{{ name }}
   <div *ngSwitchCase="'green'" [style.color]="switchColor">This is green</div>
   <div *ngSwitchDefault>This is Default</div>
 </div>
+
+<!-- ngfor -->
+
+<div *ngFor="let fruit of fruits">
+  <h2>{{fruit}}</h2>
+</div>
