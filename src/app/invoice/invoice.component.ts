@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+
 
 @Component({
   selector: "app-invoice",
@@ -7,6 +8,9 @@ import { Component, OnInit } from "@angular/core";
 })
 export class InvoiceComponent implements OnInit {
   constructor() {}
+
+  @Input() public nameOfApp;
+  @Output() public childData = new EventEmitter();
 
   public sms="";
   public name=""
@@ -38,5 +42,8 @@ export class InvoiceComponent implements OnInit {
   }
   getMathResult(num1,num2){
     return num1+num2;
+  }
+  fireEvent(){
+    this.childData.emit("hey,this comes from child component")
   }
 }

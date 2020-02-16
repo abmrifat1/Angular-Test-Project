@@ -62,6 +62,14 @@ Hi,{{ name }}
 
 <!-- ngfor -->
 
-<div *ngFor="let fruit of fruits">
-  <h2>{{fruit}}</h2>
+<div *ngFor="let fruit of fruits; index as i">
+  <h2>{{i+1}}. {{fruit}}</h2>
 </div>
+
+<hr/>
+<!-- from parent -->
+<h2>{{nameOfApp}}</h2>
+
+<!-- send to parent -->
+
+<button (click)="fireEvent()">Click</button>
