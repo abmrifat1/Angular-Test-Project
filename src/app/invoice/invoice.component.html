@@ -25,7 +25,7 @@
 <br />
 <div>
   <input #mailInput type="text" />
-  <h2>{{ "Welcome to "+  name }}</h2>
+  <h2>{{ "Welcome to " + name }}</h2>
   <button (click)="mainFeild(mailInput.value)">submit</button>
 </div>
 <hr />
@@ -33,4 +33,29 @@
 <input type="text" [(ngModel)]="name" />
 Hi,{{ name }}
 <hr />
-<p>{{getMathResult(4,5)}}</p>
+<p>{{ getMathResult(4, 5) }}</p>
+
+<!-- ngif -->
+<h3 *ngIf="displayCondition; else elseField">Name is show</h3>
+<ng-template #elseField>
+  <h3>
+    Name is hide
+  </h3>
+</ng-template>
+
+<div *ngIf="true; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  <h4>Then block</h4>
+</ng-template>
+<ng-template #elseBlock>
+  <h4>else block</h4>
+</ng-template>
+
+<!-- ngswicth -->
+
+<div [ngSwitch]="switchColor">
+  <div *ngSwitchCase="'red'" [style.color]="switchColor"> This is Red</div>
+  <div *ngSwitchCase="'blue'" [style.color]="switchColor"> This is blue</div>
+  <div *ngSwitchCase="'green'" [style.color]="switchColor">This is green</div>
+  <div *ngSwitchDefault>This is Default</div>
+</div>

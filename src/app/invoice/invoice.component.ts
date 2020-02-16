@@ -11,6 +11,8 @@ export class InvoiceComponent implements OnInit {
   public sms="";
   public name=""
   public hasError = true;
+  public displayCondition=false;
+  public switchColor='blue';
   public successText = "text_success";
   public specialText = true;
   public messageClass = {
