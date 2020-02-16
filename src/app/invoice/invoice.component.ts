@@ -33,4 +33,7 @@ export class InvoiceComponent implements OnInit {
     this.name=value;
     console.log(value)
   }
+  getMathResult(num1,num2){
+    return num1+num2;
+  }
 }
