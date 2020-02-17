@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './employee.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { InvoiceComponent } from './invoice/invoice.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

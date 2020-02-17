@@ -33,7 +33,13 @@ export class InvoiceComponent implements OnInit {
     fontStyle: "italic"
   };
   ngOnInit(): void {
-    this.employees=this._employeeService.getEmployess()
+
+    //service
+    // this.employees=this._employeeService.getEmployess()
+
+
+    //http and model
+    this._employeeService.getEmployess().subscribe(date=>this.employees=date);
   }
   getsms(event) {
     this.sms="hi btn click"
