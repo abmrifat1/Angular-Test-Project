@@ -9,4 +9,6 @@ export class AppComponent {
   title = 'Rifat Angular';
   public appName ='Hello World !'  
   public message="";
+
+ 
 }

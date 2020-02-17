@@ -72,3 +72,8 @@ Hi,{{ name }}
 
 <!-- send to parent -->
 <button (click)="fireEvent()">Click</button>
+
+<!-- service -->
+<div *ngFor="let employee of employees; index as i">
+  <h2>{{i+1}}.{{employee.id}} {{employee.name}}</h2>
+</div>

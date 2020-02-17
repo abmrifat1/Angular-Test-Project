@@ -1,3 +1,4 @@
+import { EmployeeService } from './../employee.service';
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 
@@ -7,8 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./invoice.component.scss"]
 })
 export class InvoiceComponent implements OnInit {
-  constructor() {}
+  constructor(private _employeeService:EmployeeService) {}
 
+  public employees=[];
   @Input() public nameOfApp;
   @Output() public childData = new EventEmitter();
 
@@ -30,7 +32,9 @@ export class InvoiceComponent implements OnInit {
     color: "yellow",
     fontStyle: "italic"
   };
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.employees=this._employeeService.getEmployess()
+  }
   getsms(event) {
     this.sms="hi btn click"
     console.log("hi here!!!!");
