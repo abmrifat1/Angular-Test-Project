@@ -1,9 +1,9 @@
-import { Observable } from "rxjs";
-import { IEmployee } from "./employee";
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import "rxjs/add/operator/catch";
-import "rxjs/add/observable/throw";
+import { HttpClient } from "@angular/common/http";
+import { IEmployee } from "./employee";
+import { Observable } from "rxjs";
+// import 'rxjs/add/operator/catch';
+// import 'rxjs/add/observable/throw';
 
 @Injectable({
   providedIn: "root"
@@ -14,21 +14,21 @@ export class EmployeeService {
   constructor(private http: HttpClient) {}
 
   //  http request and model
-  getEmployess(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this._url)
-    .catch(this.errorHandler);
-  }
+  // getEmployess(): Observable<IEmployee[]> {
+  //   return this.http.get<IEmployee[]>(this._url);
+   
+  // }
 
-  errorHandler(error: HttpErrorResponse) {
-    return Observable.throw(error.message || "Serber Error");
-  }
+  // errorHandler(error: HttpErrorResponse) {
+  //   return Observable.throw(error.message || "Serber Error");
+  // }
 
   // service
-  // getEmployess(){
-  //   return [
-  //     {'id':5998,'name':'abm'},
-  //     {'id':6001,'name':'ars'},
-  //     {'id':4444,'name':'btn'}
-  //   ]
-  // }
+  getEmployess(){
+    return [
+      {'id':5998,'name':'abm'},
+      {'id':6001,'name':'ars'},
+      {'id':4444,'name':'btn'}
+    ]
+  }
 }

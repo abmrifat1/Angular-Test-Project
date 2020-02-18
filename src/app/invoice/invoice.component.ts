@@ -1,6 +1,5 @@
-import { EmployeeService } from './../employee.service';
+import { EmployeeService } from "./../employee.service";
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-
 
 @Component({
   selector: "app-invoice",
@@ -8,18 +7,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./invoice.component.scss"]
 })
 export class InvoiceComponent implements OnInit {
-  constructor(private _employeeService:EmployeeService) {}
+  constructor(private _employeeService: EmployeeService) {}
 
-  public employees=[];
+  public employees = [];
   @Input() public nameOfApp;
   @Output() public childData = new EventEmitter();
 
-  public sms="";
-  public name=""
+  public sms = "";
+  public name = "";
   public hasError = true;
-  public displayCondition=false;
-  public switchColor='blue';
-  public fruits=['mango','apple','banana','orange']
+  public displayCondition = false;
+  public switchColor = "blue";
+  public fruits = ["mango", "apple", "banana", "orange"];
   public successText = "text_success";
   public specialText = true;
   public messageClass = {
@@ -33,27 +32,27 @@ export class InvoiceComponent implements OnInit {
     fontStyle: "italic"
   };
   ngOnInit(): void {
-
     //service
-    // this.employees=this._employeeService.getEmployess()
-
+    this.employees=this._employeeService.getEmployess()
 
     //http and model
-    this._employeeService.getEmployess().subscribe(date=>this.employees=date);
+    // this._employeeService
+    //   .getEmployess()
+    //   .subscribe(data => (this.employees = data));
   }
   getsms(event) {
-    this.sms="hi btn click"
+    this.sms = "hi btn click";
     console.log("hi here!!!!");
-    console.log("all event",event);
+    console.log("all event", event);
   }
-  mainFeild (value){
-    this.name=value;
-    console.log(value)
+  mainFeild(value) {
+    this.name = value;
+    console.log(value);
   }
-  getMathResult(num1,num2){
-    return num1+num2;
+  getMathResult(num1, num2) {
+    return num1 + num2;
   }
-  fireEvent(){
-    this.childData.emit("hey,this comes from child component")
+  fireEvent() {
+    this.childData.emit("hey,this comes from child component");
   }
 }
