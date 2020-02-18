@@ -12,11 +12,11 @@ export class TestComponent implements OnInit {
   public name = "Rifat";
   public bill_to = "Bill to";
   public employees =[]
-  constructor(private _employeeService: EmployeeService) {}
+  // constructor(private _employeeService: EmployeeService) {}
 
   
 
   ngOnInit(): void {
-    this.employees = this._employeeService.getEmployess()
+    // this.employees = this._employeeService.getEmployess()
   }
 }
